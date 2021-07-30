@@ -90,6 +90,7 @@ document.querySelector("#js-toggle-menu").addEventListener("click", () => {
 
 document.querySelector("#upload-destination").addEventListener("change", (e) => {
     const newUrlTarget = e.target.value;
+    console.log(newUrlTarget) //ini yang diganti buat dynamic link
     document.querySelector("#upload-form").action = newUrlTarget;
 })
 
@@ -122,7 +123,7 @@ function printData(json) {
   
     //Map over columns, make headers,join into string
     let headerRow = cols
-      .map(col => `<th>${col}</th>`)
+      .map(col => `<th class="table-styling">${col}</th>`)
       .join("");
   
     //map over array of json objs, for each row(obj) map over column values,
@@ -132,7 +133,7 @@ function printData(json) {
     //finally join all the rows together
     let rows = json
       .map(row => {
-        let tds = cols.map(col => `<td>${row[col]}</td>`).join("");
+        let tds = cols.map(col => `<td class="table-styling">${row[col]}</td>`).join("");
         return `<tr>${tds}</tr>`;
       })
       .join("");

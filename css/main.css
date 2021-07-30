@@ -263,12 +263,12 @@ textarea {
 
 .nav-header {
   background-image: linear-gradient(
-    to right bottom,
-    #e50d17,
-    #cb0040,
-    #a10058,
-    #6e0061,
-    #371659
+    to right top,
+    #5bc0de,
+    #4aacca,
+    #3a99b6,
+    #2786a3,
+    #117390
   );
   padding-top: 30px;
 }
@@ -293,7 +293,14 @@ body {
 
 .menu {
   border-radius: 7.5px;
-  background: -webkit-linear-gradient(-45deg, #dc2430 0%, #ea4774 100%);
+  background-image: linear-gradient(
+    to right top,
+    #5bc0de,
+    #4aacca,
+    #3a99b6,
+    #2786a3,
+    #117390
+  );
   min-height: calc(100vh - 40px);
   padding: 15px 15px 0;
   width: 50px;
@@ -473,10 +480,12 @@ body {
   margin-left: 20px;
   border-radius: 7.5px;
   overflow: hidden;
+  background-color: #f9f9f9;
+  flex-direction: column;
 }
 .content .header {
   width: 100%;
-  min-height: 50px;
+  height: 50px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -488,21 +497,21 @@ body {
 .content .header p,
 .content .header a {
   margin: 5px 0;
-  color: #dc2430;
+  color: #5bc0de;
 }
 .content .header p {
   margin-right: 10px;
 }
 .content .header a {
-  color: #dc2430;
+  color: #5bc0de;
 }
 .content .body {
-  padding: 20px;
+  padding: 0 20px;
   display: flex;
   width: 100%;
   background-color: #f9f9f9;
-  height: 100%;
-  flex-direction: column;
+  height: fit-content;
+  flex-wrap: wrap;
 }
 
 .links::before {
@@ -605,16 +614,23 @@ input {
 .card {
   background-color: #f4f4f4;
   border-radius: 7.5px;
-  padding: 7.5px 3.2rem;
-  height: 140px;
+  height: 170px;
   min-width: 200px;
+  width: 20%;
   box-shadow: 2px 12px 23px -20px rgb(0 0 0 / 30%);
   -webkit-box-shadow: 2px 12px 23px -20px rgb(0 0 0 / 30%);
   -moz-box-shadow: 2px 12px 23px -20px rgb(0 0 0 / 30%);
+  margin: 10px 20px;
 }
 
 .card-container {
-  margin: 0 0 40px 0;
+  margin: 0;
+  height: 100px;
+}
+
+.card-details {
+  margin: auto;
+  color: #117390;
 }
 
 .upload-destination {
@@ -636,7 +652,7 @@ input {
   background-color: #f3f3f3;
 }
 
-.upload-table th td {
+.table-styling {
   border-style: solid;
   border-width: 0.75px;
   padding: 2px 3px;
@@ -644,7 +660,15 @@ input {
 }
 
 .btn-primary {
-  background: -webkit-linear-gradient(-45deg, #e50d17 0%, #ea4774 100%);
+  background: -webkit-linear-gradient(-45deg, #5bc0de 0%, #117390 100%);
+  background-image: linear-gradient(
+    to right top,
+    #5bc0de,
+    #4aacca,
+    #3a99b6,
+    #2786a3,
+    #117390
+  );
   padding: 5px 15px;
   color: #f9f9f9;
   border-radius: 7.5px;
@@ -655,19 +679,19 @@ input {
 .btn-secondary {
   background: #f9f9f9;
   padding: 5px 15px;
-  color: #e50d17;
+  color: #117390;
   border-radius: 7.5px;
   border-style: solid;
   border-width: 0.75px;
-  border-color: #e50d17;
+  border-color: #117390;
   margin: 0 2px;
 }
 
 .add-button {
   border-radius: 50px;
   position: fixed;
-  bottom: 35px;
-  right: 35px;
+  bottom: 40px;
+  right: 40px;
   z-index: 100;
   padding: 10px;
   font-size: 32px;
@@ -678,7 +702,7 @@ input {
 }
 
 .bg-primary {
-  background-color: #e50d17;
+  background-color: #5bc0de;
 }
 
 .text-center {
