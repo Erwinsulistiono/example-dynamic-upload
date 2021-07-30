@@ -243,6 +243,10 @@ textarea {
     display: table-header-group;
   }
 
+  #jsondata {
+    overflow-y: auto;
+  }
+
   tr,
   img {
     page-break-inside: avoid;
