@@ -244,8 +244,8 @@ textarea {
   }
 
   #jsondata {
-    display: block;
-    overflow: auto;
+    display: block !important;
+    overflow: auto !important;
   }
 
   tr,
