@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <!-- Add your site or application content here -->
+  <aside class="menu">
+    <div class="heading">
+      <p>Finnet</p>
+      <div class="menu-icon" id="js-toggle-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div class="wrap">
+      <a href="">Dashboard</a>
+      <a href="">Account</a>
+
+      <p class="title">Line Break Heading</p>
+
+      <a href="">Dashboard</a>
+      <a href="">Dashboard</a>
+
+      <div class="dropdown">
+        <p>Dropdown</p>
+        <div class="links">
+          <a href="">Dropdown Item</a>
+          <a href="">Dropdown Item</a>
+          <a href="">Dropdown Item</a>
+          <a href="">Dropdown Item</a>
+          <a href="">Dropdown Item</a>
+          <a href="">Dropdown Item</a>
+          <a href="">Dropdown Item</a>
+          <a href="">Dropdown Item</a>
+        </div>
+      </div>
+
+      <a href="">Dashboard</a>
+
+      <div class="dropdown">
+        <p>Dropdown</p>
+        <div class="links">
+          <a href="">Dashboard</a>
+          <a href="">Dashboard</a>
+        </div>
+      </div>
+
+      <p class="title">Legal Section</p>
+
+      <div class="dropdown">
+        <p>Documents</p>
+        <div class="links">
+          <a href="">Contract</a>
+          <a href="">Employee Handbook</a>
+        </div>
+      </div>
+      <a href="">Terms &amp; Conditions</a>
+      <a href="">Copyright Details</a>
+    </div>
+  </aside>
+  <main class="content">
+    <header class="header">
+      <p><span id="time"></span> Admin</p>
+      <a href="#">Logout</a>
+    </header>
+    <section class="body">
+      <div class="flex justify-arround card-container">
+        <div class="card text-center">
+          <h1 class="heading-info">120</h1>
+          <h3>CA Moved</h3>
+        </div>
+        <div class="card text-center">
+          <h1 class="heading-info">120</h1>
+          <h3>Biller Moved</h3>
+        </div>
+        <div class="card text-center">
+          <h1 class="heading-info">120</h1>
+          <h3>Fille Uploaded</h3>
+        </div>
+        <div class="card text-center">
+          <h1 class="heading-info">120</h1>
+          <h3>Row Inserted</h3>
+        </div>
+      </div>
+      <button data-modal-trigger="sample-modal" class="add-button btn-primary">&nbsp;+&nbsp;</button>
+    </section>
+  </main>
+
+  <div class="modal" data-modal-name="sample-modal">
+    <div class="modal__dialog">
+      <button class="modal__close" data-modal-dismiss>×</button>
+      <form class="flex items-center" id="upload-form" action="/action_page.php"></form>
+        <header class="modal__header">
+            <h3 class="modal__title">Upload File</h3>
+        </header>
+        <div class="modal__content">
+          <p>Select Upload destination, and click upload file or drop file here</p>
+          <div class="flex">
+            <input id="fileSelect" type="file"
+              accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+          </div>
+          <div class="spacer"></div>
+          <div id="jsondata"></div>
+          <div class="spacer"></div>
+          <select class="upload-destination custom-file-input" name="upload-destination" id="upload-destination">
+            <option value="/channel">Chanel</option>
+            <option value="/biller">Biller</option>
+            <option value="/match">Match</option>
+            <option value="/alfamart">alfamart</option>
+          </select>
+        </div>
+        <footer class="modal__footer">
+          <button class="btn-secondary" data-modal-dismiss>Dismiss</button>
+          <button class="btn-primary" data-modal-dismiss>Upload</button>
+        </footer>
+      </form>
+    </div>
+  </div>
+  <!-- <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+
+  </script>
+</body>
+
+</html>
