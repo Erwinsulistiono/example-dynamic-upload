@@ -43,34 +43,34 @@ let _targettedModal,
     modalActiveClass = "is-modal-active";
 
 const showModal = el => {
-    _targettedModal = document.querySelector('[data-modal-name="'+ el + '"]');
+    _targettedModal = document.querySelector('[data-modal-name="' + el + '"]');
     _targettedModal.classList.add(modalActiveClass);
 }
 
 const hideModal = event => {
-    if(event === undefined || event.target.hasAttribute('data-modal-dismiss')) {
+    if (event === undefined || event.target.hasAttribute('data-modal-dismiss')) {
         _targettedModal.classList.remove(modalActiveClass);
     }
 }
 
 const bindEvents = (el, callback) => {
     for (i = 0; i < el.length; i++) {
-        (function(i) {
-            el[i].addEventListener('click', function(event) {
+        (function (i) {
+            el[i].addEventListener('click', function (event) {
                 callback(this, event);
             });
         })(i);
-    }   
+    }
 }
 
 const triggerModal = () => {
-    bindEvents(_triggers, function(that){
+    bindEvents(_triggers, function (that) {
         showModal(that.dataset.modalTrigger);
     });
 }
 
 const dismissModal = () => {
-    bindEvents(_dismiss, function(that){
+    bindEvents(_dismiss, function (that) {
         hideModal(event);
     });
 }
@@ -100,44 +100,45 @@ console.log(window.XLSX);
 document.getElementById('fileSelect').addEventListener("change", (event) => {
     selectedFile = event.target.files[0];
     XLSX.utils.json_to_sheet(data, 'out.xlsx');
-    if(selectedFile){
+    if (selectedFile) {
         let fileReader = new FileReader();
         fileReader.readAsBinaryString(selectedFile);
-        fileReader.onload = (event)=>{
-         let data = event.target.result;
-         let workbook = XLSX.read(data,{type:"binary"});
-         console.log(workbook);
-         workbook.SheetNames.forEach(sheet => {
-              let rowObject = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheet]);
-              console.log(rowObject);
-              document.getElementById("jsondata").innerHTML = printData(rowObject);
-            //   document.getElementById("jsondata").innerHTML = JSON.stringify(rowObject)
-         });
+        fileReader.onload = (event) => {
+            let data = event.target.result;
+            let workbook = XLSX.read(data, { type: "binary" });
+            console.log(workbook);
+            workbook.SheetNames.forEach(sheet => {
+                let rowObject = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheet]);
+                console.log(rowObject);
+                document.getElementById("jsondata").innerHTML = printData(rowObject);
+                document.getElementById("jsondata").style.overflow = auto
+                //   document.getElementById("jsondata").innerHTML = JSON.stringify(rowObject)
+            });
         }
     }
 })
 
 function printData(json) {
     let cols = Object.keys(json[0]);
-  
-  
+
+
     //Map over columns, make headers,join into string
     let headerRow = cols
-      .map(col => `<th class="table-styling">${col}</th>`)
-      .join("");
-  
+        .map(col => `<th class="table-styling">${col}</th>`)
+        .join("");
+
     //map over array of json objs, for each row(obj) map over column values,
     //and return a td with the value of that object for its column
     //take that array of tds and join them
     //then return a row of the tds
     //finally join all the rows together
     let rows = json
-      .map(row => {
-        let tds = cols.map(col => `<td class="table-styling">${row[col]}</td>`).join("");
-        return `<tr>${tds}</tr>`;
-      })
-      .join("");
-  
+        .map(row => {
+            let tds = cols.map(col => `<td class="table-styling">${row[col]}</td>`).join("");
+            return `<tr>${tds}</tr>`;
+        })
+        .join("");
+
     //build the table
     const table = `
       <table class="upload-table">
@@ -148,15 +149,15 @@ function printData(json) {
               ${rows}
           <tbody>
       <table>`;
-  
-    return table;
-  }
-  
 
-let data=[{
-    "name":"jayanth",
-    "data":"scd",
-    "abc":"sdef"
+    return table;
+}
+
+
+let data = [{
+    "name": "jayanth",
+    "data": "scd",
+    "abc": "sdef"
 }]
 
 
