@@ -111,7 +111,7 @@ document.getElementById('fileSelect').addEventListener("change", (event) => {
                 let rowObject = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheet]);
                 console.log(rowObject);
                 document.getElementById("jsondata").innerHTML = printData(rowObject);
-                document.getElementById("jsondata").style.overflow = auto
+                document.getElementById("jsondata").style.overflow = "auto"
                 //   document.getElementById("jsondata").innerHTML = JSON.stringify(rowObject)
             });
         }
